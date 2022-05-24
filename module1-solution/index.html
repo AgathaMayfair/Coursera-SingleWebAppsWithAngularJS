@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html ng-app='LunchCheck'>
+  <head>
+    <meta charset="utf-8">
+    <script src="angular.min.js"></script>
+    <script src="app.js"></script>
+    <link rel="stylesheet" href="stylesheet.css">
+    <title>Assignment 1: Lunch Check</title>
+  </head>
+  <body>
+    <h1>Lunch Check</h1>
+    <div ng-controller='LunchCheckController'>
+      <div>
+        What do you usually eat for lunch?
+        Write a list comma-separated. Empty items do NOT count.
+      </div>
+      <input id="textbox" type="text" ng-model='items'>
+      <div>
+        <button ng-click="clickButton()">Click here!</button>
+      </div>
+      <div id="optionalMessage">
+        {{message()}} 
+      </div>
+    </div>
+  </body>
+</html>
