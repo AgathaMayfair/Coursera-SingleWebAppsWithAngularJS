@@ -10,7 +10,10 @@ function LunchCheckController($scope) {
     $scope.items = "";
 
     $scope.clickButton = function(){
-     var listItems = $scope.items.split(',');
+      var eraseWhitespace = $scope.items.replace(/\s/g, "");
+      var eraseComa = eraseWhitespace.replace(",,", ",");
+
+      var listItems = eraseComa.split(',');
 
       $scope.message = function() {
         if(listItems.length === 1){
