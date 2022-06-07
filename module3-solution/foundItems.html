@@ -1,0 +1,12 @@
+<div class="foundList">
+  <ol>
+    <li ng-repeat="item in menu.items">
+      {{ item.name }} ({{ item.short_name }}):<br>
+      {{ item.description }} <br>
+      <button ng-click="menu.removeItem({index: $index});">Don't want this one!</button>
+    </li>
+  </ol>
+</div>
+<div class="message" ng-if="menu.itemInList()">
+  Nothing found
+</div>
