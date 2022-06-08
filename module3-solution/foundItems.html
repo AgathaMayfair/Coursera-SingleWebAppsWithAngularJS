@@ -1,4 +1,4 @@
-<div class="foundList">
+<div class="foundList" ng-if="isOnMenu">
   <ol>
     <li ng-repeat="item in menu.items">
       {{ item.name }} ({{ item.short_name }}):<br>
@@ -7,6 +7,6 @@
     </li>
   </ol>
 </div>
-<div class="message" ng-if="menu.itemInList()">
+<div class="message" ng-if="!isOnMenu">
   Nothing found
 </div>
