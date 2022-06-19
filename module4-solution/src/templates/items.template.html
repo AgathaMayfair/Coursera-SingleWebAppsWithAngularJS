@@ -1,0 +1,20 @@
+<a ui-sref="home">
+	<h2>Home</h2> 
+</a>
+<a ui-sref="categories">
+	<h2>Menu</h2> 
+</a>
+ <h3>{{ controller.categoriesName }}</h3>  
+
+<div>
+
+<h4>{{ controller.items.length }} Dishes: </h4>
+
+<ol ng-repeat="item in controller.items">
+	<li>
+		Dish Name: {{ item.name }}
+		({{ item.short_name }})<br>
+		Description: {{ item.description }}
+	</li>
+</ol>
+</div>
