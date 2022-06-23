@@ -1,0 +1,32 @@
+<div class="container">
+    <div ng-if="!myInfoCtrl.isLoaded">
+        <div>
+            Not Signed Up Yet.<a ui-sref="public.signUp">Sign up Now!</a>
+        </div>
+    </div>
+    <div ng-if="myInfoCtrl.isLoaded">
+        <h1>INFO</h1><br>
+        <div>
+            First Name: {{myInfoCtrl.personalInfo.firstName}}
+        </div><br>
+        <div>
+            Last Name: {{myInfoCtrl.personalInfo.lastName}}
+        </div><br>
+        <div>
+            Email: {{myInfoCtrl.personalInfo.email}}
+        </div><br>
+        <div>
+            Phone Number: {{myInfoCtrl.personalInfo.phoneNumber}}
+        </div><br>
+        <div>
+            Your Favorite Dish:
+        </div>
+        <div>
+            {{myInfoCtrl.personalInfo.favDishInfo.name}}
+        </div>
+        <img width="250" height="150" ng-src="{{myInfoCtrl.basePath}}/images/{{myInfoCtrl.personalInfo.favDishInfo.short_name}}" alt="{{myInfoCtrl.favDishInfo.name}}">
+        <div>
+            {{myInfoCtrl.personalInfo.favDishInfo.description}}
+        </div>
+    </div>
+</div>

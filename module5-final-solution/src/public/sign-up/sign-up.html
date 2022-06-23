@@ -1,0 +1,20 @@
+<div class="container">
+    <form name="regForm" novalidate>
+        <h1>Sign Up</h1> <br>
+        First Name: <input type="text" class="signUpInputBox" name="firstName" placeholder="First Name" ng-model = "signUpCtrl.firstName" required>
+        <span ng-if="regForm.firstName.$touched && regForm.firstName.$error.required">First Name required</span> <br>
+        Last Name: <input type="text" class="signUpInputBox" name="lastName" placeholder="Last Name" ng-model="signUpCtrl.lastName" required>
+        <span ng-if="regForm.lastName.$touched && regForm.lastName.$error.required">Last Name required</span><br>
+        Email: <input type="email" class="signUpInputBox" name="email" placeholder="Email" ng-model="signUpCtrl.email" required>
+        <span ng-if="regForm.email.$touched && regForm.email.$invalid">Enter a valid email</span> <br>
+        Phone Number: <input type="text" class="signUpInputBox" name="phoneNumber" placeholder="Phone Number" ng-model="signUpCtrl.phoneNumber" required pattern="(\d{10})">
+        <span ng-if="regForm.phoneNumber.$touched && regForm.phoneNumber.$invalid && !regForm.phoneNumber.$error.required"> Phone number format contains 10 digits</span><br>
+        Favorite Dish: <input type="text" class="signUpInputBox" name="favDish" placeholder="Favorite Dish" ng-model="signUpCtrl.favDish">
+        <span ng-if="signUpCtrl.showErrorMessageFlag">No such menu number exists!</span> <br><br><br>
+        <button ng-disabled="regForm.$invalid" ng-click="signUpCtrl.onSubmit();">Submit</button>
+
+        <div ng-if="signUpCtrl.showProcessingMessageFlag"></div>
+        <div ng-if="signUpCtrl.showSuccessMessageFlag"> Your information has been saved!</div>
+        <div ng-if="signUpCtrl.showSuccessMessageFlag"><a ui-sref="public.home">Home</a></div>        
+    </form>
+</div>
